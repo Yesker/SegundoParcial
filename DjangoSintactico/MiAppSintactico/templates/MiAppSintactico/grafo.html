@@ -1,0 +1,56 @@
+{% extends 'MiAppSintactico/home.html' %}
+{%load static%}
+    {% block content %}
+    <div class="col text-center">
+      <h1>Grafo</h1>
+    </div>
+    
+        <table class="table table-striped">
+          <thead>
+            <tr>
+             
+              <th scope="col"><h3>Origen</h3></th>
+              <th scope="col"><h3>Destino</h3> </th>
+              <th scope="col"><h3>Conectado</h3></th>
+            </tr>
+          </thead>
+          <tbody>
+          
+        
+              
+              <tr>
+                  <th scope="row">{{Datos2}}</th> 
+                   <td>{{Datos2}}</td>
+                   <td>{{Datos2}}</td>
+               
+                  </tr>
+            
+      </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="col text-center">
+        <form action="{% url 'sintomas' %}">
+          <div>
+             <button class ="btn btn-danger", type ="submit">Regresar</button>
+          </div>
+        </form>
+      </div>
+      
+    {% endblock %}
+
+ 

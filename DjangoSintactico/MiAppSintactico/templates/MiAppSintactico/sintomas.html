@@ -1,0 +1,128 @@
+{% extends 'MiAppSintactico/home.html' %}
+{%load static%}
+	{% block content %}
+	<!-- service section starts here -->
+	<section class="service text-center">
+		<div class="container">
+			<div class="row">
+				<h2>Sintomas</h2>
+				<h4>Si usted presenta cualquiera de estos síntomas y éstos persisten por mucho tiempo o empeoran, por favor, consulte con un médico para saber la causa de ellos</h4>
+				<div class="col-md-3 col-sm-6">
+					<div class="single-service">
+						<div class="single-service-img">
+							<div class="service-img">
+								<img class="heart img-responsive" src="{% static 'MiAppSintactico/img/peso.png' %}" alt="">
+							</div>
+						</div>
+						<h3>Pérdida de peso inexplicable</h3>
+                       <h4>La mayoría de las personas con cáncer experimentará pérdida de peso en algún momento. Cuando usted pierde peso sin razón aparente, a esto se le llama pérdida de peso inexplicable. Una pérdida de peso inexplicable de 10 libras o más puede ser el primer signo de cáncer. Esto ocurre con más frecuencia en caso de cáncer de páncreas, estómago, esófago o pulmón.</h5>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="single-service">
+						<div class="single-service-img">
+							<div class="service-img">
+								<img class="brain img-responsive" src="{% static 'MiAppSintactico/img/fiebre.png' %}" alt="">
+							</div>
+						</div>
+						<h3>Fiebre</h3>
+
+						<h4>La fiebre es muy común en los pacientes que tienen cáncer, aunque ocurre con más frecuencia después que el cáncer se ha propagado del lugar donde se originó. Casi todas las personas con cáncer experimentarán fiebre en algún momento, especialmente si el cáncer o sus tratamientos afectan al sistema inmunológico.</h4>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="single-service">
+						<div class="single-service-img">
+							<div class="service-img">
+								<img class="knee img-responsive" src="{% static 'MiAppSintactico/img/cansancio.png' %}" alt="">
+							</div>
+						</div>
+						<h3>Cansancio</h3>
+
+						<h4>El cansancio es un agotamiento extremo que no mejora con el descanso. Puede ser un síntoma importante a medida que el cáncer progresa. No obstante, en algunos cánceres, como leucemia, el cansancio puede ocurrir al principio. Algunos cánceres de colon o estómago pueden causar pérdida de sangre que no es evidente. Ésta es otra manera de que el cáncer puede causar cansancio.</h4>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="single-service">
+						<div class="single-service-img">
+							<div class="service-img">
+								<img class="bone img-responsive" src="{% static 'MiAppSintactico/img/dolor.png' %}" alt="">
+							</div>
+						</div>
+						<h3>Dolor</h3>
+						<h4>El dolor puede ser un síntoma inicial de algunos cánceres, tales como el cáncer de los huesos o el cáncer testicular. Un dolor de cabeza que no desaparece o que no se alivia con tratamiento puede ser un síntoma de un tumor cerebral. El dolor de espalda puede ser un síntoma de cáncer de colon, recto u ovario. Con más frecuencia, el dolor debido al cáncer significa que ya se propagó del lugar donde se originó (metástasis).</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section><!-- end of service section -->
+</section><!-- end of slider section -->
+<!-- footer starts here -->
+{% for i in tabla %}
+<!-- <ul>
+	<li>{{i.partP}}</li>
+	<li>{{i.temperatura}}</li>
+	<li>{{i.color}}</li>
+	<li>{{i.inflamacion}}</li>
+	
+</ul>
+
+
+
+{% endfor%} -->
+<div class="col text-center">
+<h1>Tabla de Tejidos</h1>
+</div>
+
+<table class="table table-striped">
+	<thead>
+	  <tr>
+		
+		<th scope="col">Numero de Parte</th>
+		<th scope="col">Temperatura</th>
+		<th scope="col">Color </th>
+		<th scope="col">Inflamacion</th>
+		
+	  </tr>
+	</thead>
+	<tbody>
+
+		{% for registros in tabla %}
+		
+		<tr>
+		     <th scope="row">{{registros.partP}}</th>
+		     <td>{{registros.temperatura}}</td>
+			 <td>{{registros.color}}</td>
+			 <td>{{registros.inflamacion}}</td>
+	        </tr>
+	    {% endfor %}
+	
+	</tbody>
+  </table>
+
+
+ <div class="col text-center">
+  <form action="{% url 'Procesa' %}">
+    <div>
+	   <button class ="btn btn-danger", type ="submit">Analizar Base de Datos</button>
+    </div>
+  </form>
+</div>
+ 
+
+<p></p>
+<div class="col text-center">
+	<form action="{% url 'grafo1' %}">
+	  <div>
+		 <button class ="btn btn-danger", type ="submit">Grafo</button>
+	  </div>
+	</form>
+  </div>
+  
+  
+
+ {% endblock %}
+ 
+
+
+ 

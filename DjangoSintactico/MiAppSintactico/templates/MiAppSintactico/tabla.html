@@ -1,0 +1,141 @@
+{% extends 'MiAppSintactico/home.html' %}
+{%load static%}
+    {% block content %}
+    <div class="col text-center">
+    <h1>RESULTADO DE ANALISIS</h1>
+    </div>
+    <div class="col text-center">
+  <h1>Promedio por columna</h1>
+</div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+         
+          <th scope="col"><h3>Temperatura</h3></th>
+          <th scope="col"><h3>Color</h3> </th>
+          <th scope="col"><h3>Inflamacion</h3></th>
+        </tr>
+      </thead>
+      <tbody>
+      
+    
+          
+          <tr>
+              <th scope="row">{{promediotemperatura}}</th> 
+               <td>{{promediocolor}}</td>
+               <td>{{promedioinflamacion}}</td>
+           
+              </tr>
+        
+  </tbody>
+    </table>
+   
+    <div class="col text-center">
+    <h1>Promedio por registro</h1>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Numero de Parte</th>
+          <th scope="col"><h3>Temperatura</h3></th>
+          <th scope="col"><h3>Color</h3> </th>
+          <th scope="col"><h3>Inflamacion</h3></th>
+        </tr>
+      </thead>
+      <tbody>
+  
+        {% for regis in milista %}
+          <tr>
+               <th scope="row">{{regis.milista}}</th>
+               <td>{{regis.temperatura}}</td>
+               <td>{{regis.color}}</td>
+               <td>{{regis.inflamacion}}</td>
+              </tr>
+        
+              {% endfor %}
+      </tbody>
+    </table>
+  
+    
+    <div class="col text-center">
+      <h1>Desviacion estandar por columna</h1>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"><h3>Temperatura</h3></th>
+            <th scope="col">Min</th>
+            <th scope="col">Max</th>
+            <th scope="col"><h3>Color</h3> </th>
+            <th scope="col">Min</th>
+            <th scope="col">Max</th>
+            <th scope="col"><h3>Inflamacion</h3></th>
+            <th scope="col">Min</th>
+            <th scope="col">Max</th>
+          </tr>
+        </thead>
+        <tbody>
+    
+           
+            
+            <tr>
+                 <th scope="row">{{stdtemperatura}}</th>
+                 <td>{{minimotem}}</td> 
+                 <td>{{maxt}}</td>
+                 <td>{{stdcolor}}</td>
+                 <td>{{minicolor}}</td> 
+                 <td>{{maxc}}</td>
+                 <td>{{stdinflamacion}}</td>
+                 <td>{{minimoinfla}}</td> 
+                 <td>{{maxi}}</td>
+                </tr>
+           
+        
+        </tbody>
+      </table>
+
+
+
+      
+    <div class="col text-center">
+      <h1>Moda por columna</h1>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"><h3>Temperatura</h3></th>
+            <th scope="col"><h3>Color</h3> </th>
+            <th scope="col"><h3>Inflamacion</h3></th>
+          
+          </tr>
+        </thead>
+        <tbody>
+    
+           
+            
+            <tr>
+                 <th scope="row">{{modatem}}</th>
+                 <td>{{modacolor}}</td> 
+                 <td>{{modainfla}}</td>
+            
+                </tr>
+           
+        
+        </tbody>
+      </table>
+    <div class="col text-center">
+      <form action="{% url 'sintomas' %}">
+        <div>
+         <button class ="btn btn-danger", type ="submit">Regresar</button>
+        </div>
+      </form>
+    </div>
+
+
+
+
+
+
+    
+   {% endblock %}

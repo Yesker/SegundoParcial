@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Sintactico Estructural - Responsive HTML &amp; Bootstrap Template</title>
+	<link rel="stylesheet" href="{% static 'MiAppSintactico/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'MiAppSintactico/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'MiAppSintactico/css/style.css' %}">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'> -->
+	<script src="{% static 'MiAppSintactico/js/modernizr.js' %}"></script>
+	<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+	
+	<!-- ====================================================
+	header section -->
+	<header class="top-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-5 header-log">
+					<br>
+					<a href="{% url 'home' %}"><img src="{% static 'MiAppSintactico/img/log.png'  %}" alt="" class="img-responsive logo"></a>
+				</div>
+
+				<div class="col-md-7">
+					<nav class="navbar navbar-default">
+					  <div class="container-fluid nav-bar">
+					    <!-- Brand and toggle get grouped for better mobile display -->
+					    <div class="navbar-header">
+					      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					      </button>
+					    </div>
+
+					    <!-- Collect the nav links, forms, and other content for toggling -->
+					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					      
+					      <ul class="nav navbar-nav navbar-right">
+					        <li><a class="menu active" href="{% url 'home' %}" >Inicio</a></li>
+					        <li><a class="menu" href="{% url 'cancer' %}">¿Qué es el cáncer?</a></li>
+					        <li><a class="menu" href="{% url 'sintomas' %}">Sintomas y tejidos </a></li>
+					        <li><a class="menu" href="{% url 'prevenir' %}">Prevenir</a></li>
+					        <li><a class="menu" href="{% url 'contacto' %}"> contacto</a></li>
+					      </ul>
+					    </div><!-- /navbar-collapse -->
+					  </div><!-- / .container-fluid -->
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header> <!-- end of header area -->
+
+	<section class="slider" id="home">
+		<div class="container-fluid">
+			<div class="row">
+			    <div id="carouselHacked" class="carousel slide carousel-fade" data-ride="carousel">
+					<div class="header-backup"></div>
+			        <!-- Wrapper for slides -->
+			        <div class="carousel-inner" role="listbox">
+			            <div class="item active">
+			            	<img src="{% static 'MiAppSintactico/img/slide-one.jpg' %}" alt="">
+			                <div class="carousel-caption">
+		               			<h1>#OctubreRosa</h1>
+		               			<p> Mes de la lucha</p>
+		               			<button>learn more</button>
+			                </div>
+			            </div>
+			            <div class="item">
+			            	<img src="{% static 'MiAppSintactico/img/slide-two.jpg' %}" alt="">
+			                <div class="carousel-caption">
+		               			<h1>Eres fuerte</h1>
+		               			<p>¡Superaras el cáncer!</p>
+		               			<button>learn more</button>
+			                </div>
+			            </div>
+			            <div class="item">
+			            	<img src="{% static 'MiAppSintactico/img/slide-three.jpg' %}" alt="">
+			                <div class="carousel-caption">
+		               			<h1>Checate a tiempo</h1>
+		               			<p>¡Sé una mujer a la vanguardia de tu salud!</p>
+		               			<button>learn more</button>
+			                </div>
+			            </div>
+			            <div class="item">
+			            	<img src="{% static 'MiAppSintactico/img/slide-four.jpg' %}" alt="">
+			                <div class="carousel-caption">
+		               			<h1>Por un mundo</h1>
+		               			<p>Sin cáncer de mama</p>
+		               			<button>learn more</button>
+			                </div>
+			            </div>
+			        </div>
+			        <!-- Controls -->
+			        <a class="left carousel-control" href="#carouselHacked" role="button" data-slide="prev">
+			            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			            <span class="sr-only">Previous</span>
+			        </a>
+			        <a class="right carousel-control" href="#carouselHacked" role="button" data-slide="next">
+			            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			            <span class="sr-only">Next</span>
+			        </a>
+			    </div>
+			</div>
+		</div>
+		
+	</section><!-- end of slider section -->
+	<!-- footer starts here -->
+
+{% block content%} 
+
+{% endblock %}
+<footer class="footer clearfix">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 footer-para">
+				<p>&copy;Mostafizur All right reserved</p>
+			</div>
+			<div class="col-xs-6 text-right">
+				<a href=""><i class="fa fa-facebook"></i></a>
+				<a href=""><i class="fa fa-twitter"></i></a>
+				<a href=""><i class="fa fa-skype"></i></a>
+			</div>
+		</div>
+	</div>
+</footer>
+	
+
+	<script src="{% static 'MiAppSintactico/js/jquery-2.1.1.js'%}"></script>
+	<script src="{% static 'MiAppSintactico/http://maps.google.com/maps/api/js?sensor=true'%}"></script>
+	<script src="{% static 'MiAppSintactico/js/gmaps.js' %}"></script>
+	<script src="{% static 'MiAppSintactico/js/smoothscroll.js'%}"></script>
+	<script src="{% static 'MiAppSintactico/js/bootstrap.min.js'%}"></script>
+	<script src="{% static 'MiAppSintactico/js/custom.js'%}"></script>
+	
+</body>
+</html>
